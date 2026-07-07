@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Whitelist compiled single-file HTML for Streamlit deployment
+!dist/index.html
