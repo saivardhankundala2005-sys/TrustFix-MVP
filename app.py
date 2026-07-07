@@ -34,7 +34,7 @@ st.markdown("""
             height: 98vh;
         }
     </style>
-""", unsafe_allowed_html=True)
+""", unsafe_allow_html=True)
 
 # Path to the compiled HTML file
 html_path = os.path.join(os.path.dirname(__file__), "dist", "index.html")
