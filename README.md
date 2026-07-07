@@ -83,3 +83,27 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
     npm run dev
     ```
 4.  Open [http://localhost:5173/](http://localhost:5173/) in your web browser.
+
+---
+
+## 🎈 Streamlit Deployment & Running
+
+This project is fully configured for zero-setup Streamlit deployment:
+
+### How it works
+1.  **Vite Bundler Inlining:** We configured `vite-plugin-singlefile` to bundle React, Tailwind CSS, and icon assets directly inside a single self-contained HTML build (`dist/index.html`).
+2.  **Streamlit Host (`app.py`):** The Python runner script loads this file and serves it full-screen within Streamlit. This avoids any asset 404 path issues and removes the need for Node.js in the Streamlit Cloud runtime since the pre-compiled `dist/index.html` is tracked.
+
+### Run Locally with Streamlit
+Ensure you have the Python packages installed:
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+This will start Streamlit on [http://localhost:8501/](http://localhost:8501/).
+
+### Deploying to Streamlit Cloud
+1.  Push the code to GitHub (already completed at [TrustFix-MVP](https://github.com/saivardhankundala2005-sys/TrustFix-MVP)).
+2.  Go to [Streamlit Community Cloud](https://share.streamlit.io/).
+3.  Click **New app**, select your repository `TrustFix-MVP`, select branch `main`, and set **Main file path** to `app.py`.
+4.  Click **Deploy**! The app will spin up instantly.
